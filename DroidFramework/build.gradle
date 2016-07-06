@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 23
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:design:23.+'
+    compile 'com.android.support:support-v4:23.0.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+
+    // ButterKnife
+    compile 'com.jakewharton:butterknife:7.0.1'
+
+    // Logger
+    compile 'com.orhanobut:logger:1.4'
+
+    // OkHttp3
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+
+}
