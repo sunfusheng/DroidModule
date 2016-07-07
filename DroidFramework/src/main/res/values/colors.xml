@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#5677fc</color>
-    <color name="colorPrimaryLight">#738ffe</color>
+    <color name="colorPrimary">#4e6cef</color>
     <color name="colorPrimaryDark">#4e6cef</color>
-    <color name="color_accent">#f97b5c</color>
+    <color name="colorAccent">#f97b5c</color>
 
     <!-- common -->
     <color name="white">#FFFFFF</color>

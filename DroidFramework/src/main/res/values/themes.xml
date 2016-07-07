@@ -4,7 +4,7 @@
     <style name="BaseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:fitsSystemWindows">true</item>
         <item name="android:windowBackground">@color/bg</item>
     </style>

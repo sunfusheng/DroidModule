@@ -1,42 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ripple_item_clicked_with_mask"
+        android:padding="15dp"
+        android:text="获取北京天气信息"
+        android:textColor="@color/font_black_2"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="@color/white"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_weather"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ripple_item_clicked_with_mask"
-            android:padding="15dp"
-            android:text="获取北京天气信息"
-            android:textColor="@color/font_black_2"
-            android:textSize="16sp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:background="@color/font_black_6"/>
-
-        <TextView
-            android:id="@+id/tv_phone_num"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ripple_item_clicked_with_mask"
-            android:padding="15dp"
-            android:text="获取手机号码归属地"
-            android:textColor="@color/font_black_2"
-            android:textSize="16sp"/>
-    </LinearLayout>
-</RelativeLayout>
+        android:background="@drawable/ripple_item_clicked_with_mask"
+        android:padding="15dp"
+        android:text="获取手机号码归属地"
+        android:textColor="@color/font_black_2"
+        android:textSize="15sp"/>
+</LinearLayout>
