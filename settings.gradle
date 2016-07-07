@@ -1,2 +1,4 @@
-include ':app', ':ModuleWeather', ':ModulePhone',
-        ':DroidFramework'
+include ':app',
+        ':DroidFramework',
+        ':ModulePhone',
+        ':ModuleWeather'
