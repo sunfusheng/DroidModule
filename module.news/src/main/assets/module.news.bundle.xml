@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module name="news" package="com.sunfusheng.news">
+
+    <initializer name="com.sunfusheng.news.Initializer"/>
+
+    <fragment name="NewsFragment" class=".news.NewsFragment">
+        <arg name="cid" type="string"/>
+        <arg name="is_paging" type="string"/>
+        <arg name="city_code" type="string"/>
+        <arg name="is_persist" type="boolean"/>
+        <arg name="is_lazy_load" type="boolean"/>
+    </fragment>
+
+</module>

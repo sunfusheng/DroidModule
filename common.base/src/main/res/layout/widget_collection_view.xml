@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <com.sunfusheng.base.widget.RefreshView.SwipeRefreshWrapper
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ViewStub
+        android:id="@+id/error_view_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/placeholder_layout_network_error"/>
+
+    <ViewStub
+        android:id="@+id/empty_view_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/placeholder_layout_no_data"/>
+
+    <include
+        android:id="@+id/loading_layout"
+        layout="@layout/placeholder_layout_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+</merge>

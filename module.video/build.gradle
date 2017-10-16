@@ -1,0 +1,28 @@
+//apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    def app = rootProject.ext.android
+    compileSdkVersion app.compileSdkVersion as int
+    buildToolsVersion app.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.sunfusheng.video"
+        minSdkVersion app.minSdkVersion as int
+        targetSdkVersion app.targetSdkVersion as int
+        versionCode app.versionCode as int
+        versionName app.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    def dependencies = rootProject.ext.dependencies
+    compile project(':common.resources')
+}

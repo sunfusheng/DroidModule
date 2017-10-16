@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="google_colors">
+        <item>@color/red</item>
+        <item>@color/blue</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+    </integer-array>
+
+    <string-array name="pick_picture">
+        <item>从相册选择</item>
+        <item>拍照</item>
+    </string-array>
+
+    <string-array name="pick_material">
+        <item>图片</item>
+        <item>视频</item>
+    </string-array>
+
+</resources>

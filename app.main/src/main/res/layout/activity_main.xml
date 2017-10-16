@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/coordinatorLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/d5"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="22sp"/>
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/iv_mine"
+                android:background="?actionBarItemBackground"
+                android:padding="6dp"
+                android:src="@mipmap/ic_search"/>
+
+            <ImageView
+                android:id="@+id/iv_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="?actionBarItemBackground"
+                android:padding="6dp"
+                android:src="@mipmap/ic_mine"/>
+        </RelativeLayout>
+
+        <com.sunfusheng.base.widget.SmartTabLayout.SmartTabLayout
+            android:id="@+id/smartTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            android:paddingBottom="1dp"
+            app:stl_defaultTabBackground="?attr/selectableItemBackground"
+            app:stl_defaultTabTextAllCaps="false"
+            app:stl_defaultTabTextColor="@color/tab_main_text_color"
+            app:stl_defaultTabTextMinWidth="0dp"
+            app:stl_defaultTabTextSize="15sp"
+            app:stl_distributeEvenly="false"
+            app:stl_dividerThickness="0dp"
+            app:stl_indicatorAlwaysInCenter="false"
+            app:stl_indicatorColor="@color/white"
+            app:stl_indicatorCornerRadius="2px"
+            app:stl_indicatorGravity="bottom"
+            app:stl_indicatorInFront="false"
+            app:stl_indicatorInterpolation="smart"
+            app:stl_indicatorThickness="4px"
+            app:stl_indicatorWithoutPadding="false"
+            app:stl_overlineColor="@color/transparent"
+            app:stl_overlineThickness="0dp"
+            app:stl_underlineThickness="0dp"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+</android.support.design.widget.CoordinatorLayout>

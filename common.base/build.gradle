@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'realm-android'
+
+android {
+    def app = rootProject.ext.android
+    compileSdkVersion app.compileSdkVersion as int
+    buildToolsVersion app.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion app.minSdkVersion as int
+        targetSdkVersion app.targetSdkVersion as int
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext.dependencies
+    compile dependencies["AppCompat"]
+    compile dependencies["Design"]
+    compile dependencies["ButterKnife"]
+    compile dependencies["ButterknifeCompiler"]
+
+    compile dependencies["RxJava2"]
+    compile dependencies["RxAndroid2"]
+    compile dependencies["RxLifecycle2"]
+    compile dependencies["RxLifecycle2Android"]
+    compile dependencies["RxLifecycle2Components"]
+    compile dependencies["RxPermissions2"]
+    compile dependencies["RxBinding2"]
+
+    compile dependencies["OkHttp3"]
+    compile dependencies["OkHttpLoggingInterceptor"]
+    compile dependencies["Retrofit2"]
+    compile dependencies["Retrofit2ConverterGson"]
+    compile dependencies["Retrofit2AdapterRxJava2"]
+
+    compile dependencies["GlideImageView"]
+    compile dependencies["SharedPreferences"]
+    compile dependencies["ImmersionBar"]
+
+    compile project(':common.resources')
+    compile project(':lib.utils')
+    compile project(':lib.viewobject')
+    compile project(':lib.infostream')
+    compile project(':lib.router')
+}

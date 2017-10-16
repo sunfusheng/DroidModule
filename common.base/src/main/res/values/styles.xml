@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleLoadingViewAttr">
+        <attr name="circleRadius" format="dimension"/>
+        <attr name="circleSpacing" format="dimension"/>
+        <attr name="cycle" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="CollectionViewAttr">
+        <attr name="collectionType">
+            <enum name="recyclerView" value="0"/>
+            <enum name="listView" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MaterialRefreshLayout">
+        <attr name="overlay" format="boolean"/>
+        <attr name="wave_height_type" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="higher" value="1"/>
+        </attr>
+        <attr name="wave_color" format="color"/>
+        <attr name="wave_show" format="boolean"/>
+        <attr name="progress_colors" format="reference"/>
+        <attr name="progress_stoke_width" format="dimension"/>
+        <attr name="progress_background_color" format="color"/>
+        <attr name="progress_show_arrow" format="boolean"/>
+        <attr name="progress_arrow_width" format="dimension"/>
+        <attr name="progress_arrow_height" format="dimension"/>
+        <attr name="progress_show_circle_backgroud" format="boolean"/>
+        <attr name="progress_value" format="integer"/>
+        <attr name="progress_max_value" format="integer"/>
+        <attr name="progress_text_size" format="dimension"/>
+        <attr name="progress_text_color" format="color"/>
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+        <attr name="progress_size_type" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="big" value="1"/>
+        </attr>
+        <attr name="isLoadMore" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalProgressView">
+        <attr name="hpv_progressNormalColor" format="color"/>
+        <attr name="hpv_progressReachColor" format="color"/>
+        <attr name="hpv_progressTextColor" format="color"/>
+        <attr name="hpv_progressTextSize" format="dimension"/>
+        <attr name="hpv_progressTextOffset" format="dimension"/>
+        <attr name="hpv_progressNormalSize" format="dimension"/>
+        <attr name="hpv_progressReachSize" format="dimension"/>
+        <attr name="hpv_progressTextPosition" format="enum">
+            <enum name="TOP" value="1"/>
+            <enum name="BOTTOM" value="-1"/>
+            <enum name="CENTER" value="0"/>
+        </attr>
+        <attr name="hpv_progressTextVisible" format="boolean"/>
+        <attr name="hpv_progressTextSkewX" format="dimension"/>
+        <attr name="hpv_progressTextPrefix" format="string"/>
+        <attr name="hpv_progressTextSuffix" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressView">
+        <attr name="cpv_progressNormalColor" format="color"/>
+        <attr name="cpv_progressReachColor" format="color"/>
+        <attr name="cpv_progressTextColor" format="color"/>
+        <attr name="cpv_progressTextSize" format="dimension"/>
+        <attr name="cpv_progressTextOffset" format="dimension"/>
+        <attr name="cpv_progressNormalSize" format="dimension"/>
+        <attr name="cpv_progressReachSize" format="dimension"/>
+        <attr name="cpv_radius" format="dimension"/>
+        <attr name="cpv_progressTextVisible" format="boolean"/>
+        <attr name="cpv_progressStartArc" format="integer"/>
+        <attr name="cpv_progressTextSkewX" format="dimension"/>
+        <attr name="cpv_progressTextPrefix" format="string"/>
+        <attr name="cpv_progressTextSuffix" format="string"/>
+        <attr name="cpv_innerBackgroundColor" format="color"/>
+        <attr name="cpv_progressStyle" format="enum">
+            <enum name="Normal" value="0"/>
+            <enum name="FillInner" value="1"/>
+            <enum name="FillInnerArc" value="2"/>
+        </attr>
+        <attr name="cpv_innerProgressColor" format="color"/>
+        <attr name="cpv_innerPadding" format="dimension"/>
+        <attr name="cpv_outerColor" format="color"/>
+        <attr name="cpv_outerSize" format="dimension"/>
+        <attr name="cpv_reachCapRound" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsStartOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MyCustomStyle">
+        <attr name="anchor_id" format="integer|reference"/>
+    </declare-styleable>
+
+</resources>

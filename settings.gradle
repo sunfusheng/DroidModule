@@ -1,0 +1,12 @@
+include ':app.main',
+
+        ':lib.utils',
+        ':lib.viewobject',
+        ':lib.infostream',
+        ':lib.router',
+
+        ':common.resources',
+        ':common.base',
+
+        ':module.news',
+        ':module.video'

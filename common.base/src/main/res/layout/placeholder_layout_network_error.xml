@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_network_error"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_placeholder_network_error_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d5"
+        android:text="@string/placeholder_network_error_title"
+        android:textColor="@color/c3"
+        android:textSize="@dimen/f5"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_placeholder_network_error_summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d2"
+        android:text="@string/placeholder_network_error_summary"
+        android:textColor="@color/c3"
+        android:textSize="@dimen/f7"/>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="MainTabLayoutTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/f6</item>
+        <item name="android:textColor">@color/c3</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+</resources>

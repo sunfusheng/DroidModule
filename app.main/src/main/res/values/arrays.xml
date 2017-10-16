@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tab_titles">
+        <item>我的</item>
+        <item>资讯</item>
+        <item>视频</item>
+        <item>搜索</item>
+    </string-array>
+
+</resources>

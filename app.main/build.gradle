@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    def app = rootProject.ext.android
+    compileSdkVersion app.compileSdkVersion as int
+    buildToolsVersion app.buildToolsVersion
+
+    defaultConfig {
+        applicationId app.applicationId
+        minSdkVersion app.minSdkVersion as int
+        targetSdkVersion app.targetSdkVersion as int
+        versionCode app.versionCode as int
+        versionName app.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+        maxProcessCount 8
+        javaMaxHeapSize "6g"
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    buildTypes {
+        release {
+            buildConfigField "boolean", "isDebug", "false"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            buildConfigField "boolean", "isDebug", "true"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext.dependencies
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile dependencies["AppCompat"]
+    compile dependencies["RecyclerView"]
+    compile dependencies["Design"]
+    compile dependencies["Cardview"]
+    compile dependencies["ButterKnife"]
+    compile dependencies["ButterknifeCompiler"]
+
+    if (isModule.toBoolean()) {
+        compile project(':common.base')
+    } else {
+        compile project(':module.news')
+    }
+}

@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    def app = rootProject.ext.android
+    compileSdkVersion app.compileSdkVersion as int
+    buildToolsVersion app.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion app.minSdkVersion as int
+        targetSdkVersion app.targetSdkVersion as int
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext.dependencies
+    compile dependencies["AppCompat"]
+    compile dependencies["RxAndroid2"]
+}

@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="news">新闻</string>
+    <string name="video">视频</string>
+    <string name="image">图片</string>
+    <string name="music">音乐</string>
+
+    <string name="common_loading">加载中&#8230;</string>
+    <string name="common_load_more">点击加载更多</string>
+    <string name="common_load_error">加载失败,点击重试!</string>
+    <string name="common_no_data">没有更多数据</string>
+    <string name="full_data">没有了，点击刷新更多</string>
+
+    <string name="placeholder_no_data_title">暂无内容</string>
+    <string name="placeholder_network_error_title">网络连接失败</string>
+    <string name="placeholder_network_error_summary">木有信号，正在转圈寻找网络</string>
+
+    <string name="top_toast_net_error">网络不给力，请检查网络刷新重试</string>
+    <string name="top_toast_no_more">暂时没有更多内容～</string>
+    <string name="top_toast_update_success">%d条新内容</string>
+
+    <string name="check_permission_camera">请检查是否有相机权限</string>
+    <string name="check_permission_contact">请检查是否有读联系人权限</string>
+    <string name="check_permission_location">请检查是否有定位权限</string>
+    <string name="check_permission_record_audio">请检查是否有录音权限</string>
+    <string name="check_permission_call">请检查是否有打电话权限</string>
+    <string name="check_permission_storage">没有存储权限，请手动授权</string>
+    <string name="check_permission_phone_state">无法获取设备ID，请手动授权</string>
+
+</resources>

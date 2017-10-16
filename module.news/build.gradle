@@ -1,0 +1,58 @@
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    def app = rootProject.ext.android
+    compileSdkVersion app.compileSdkVersion as int
+    buildToolsVersion app.buildToolsVersion
+
+    defaultConfig {
+        if (isModule.toBoolean()) {
+            applicationId "com.sunfusheng.news"
+        }
+        minSdkVersion app.minSdkVersion as int
+        targetSdkVersion app.targetSdkVersion as int
+        versionCode app.versionCode as int
+        versionName app.versionName
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+                java {
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    def dependencies = rootProject.ext.dependencies
+    compile dependencies["AppCompat"]
+    compile dependencies["RecyclerView"]
+    compile dependencies["Design"]
+    compile dependencies["Percent"]
+    compile dependencies["ButterKnife"]
+    compile dependencies["ButterknifeCompiler"]
+
+    compile project(':common.base')
+}
