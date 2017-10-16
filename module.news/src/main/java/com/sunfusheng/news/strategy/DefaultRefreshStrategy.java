@@ -102,7 +102,6 @@ public class DefaultRefreshStrategy extends AbsRefreshStrategy {
         if (view.getContext() == null) {
             return;
         }
-
 //        ActionDelegateProvider actionDelegateProvider = new ActionDelegateProvider();
 //        actionDelegateProvider.registerActionDelegate(LastRefreshTagViewObject.class, Void.class, (context, actionId, data, vo) -> {
 //            QEventBus.getEventBus().post(new Events.OnClickLastRefreshVOEvent());
