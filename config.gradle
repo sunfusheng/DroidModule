@@ -1,16 +1,16 @@
 ext {
     android = [
-            compileSdkVersion: 25,
-            buildToolsVersion: "25.0.3",
+            compileSdkVersion: 26,
+            buildToolsVersion: "26.0.2",
             applicationId    : "com.sunfusheng.app.main",
             minSdkVersion    : 15,
-            targetSdkVersion : 25,
+            targetSdkVersion : 26,
             versionCode      : 1,
             versionName      : "1.0.0",
     ]
 
     // SDK
-    def sdkVersion = "25.3.1"
+    def sdkVersion = "26.1.0"
 
     // Net
     def okHttp3Version = "3.7.0"
@@ -25,10 +25,10 @@ ext {
     def rxBinding2Version = "2.0.0"
 
     // image
-    def glideImageViewVersion = "1.1.0"
+    def glideImageViewVersion = "1.2.0"
 
     // Others
-    def butterKnifeVersion = "8.5.1"
+    def butterKnifeVersion = "8.8.1"
     def loggerVersion = "1.15"
     def dialogVersion = "0.9.4.4"
     def sharedPreferencesVersion = "0.12.0"
