@@ -2,24 +2,24 @@ apply from: 'config.gradle'
 
 buildscript {
     repositories {
+        google()
         jcenter()
         mavenCentral()
-        google()
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
-        classpath 'me.tatarka:gradle-retrolambda:3.6.0'
+        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
         classpath "io.realm:realm-gradle-plugin:4.2.0"
     }
 }
 
 allprojects {
     repositories {
+        google()
         jcenter()
         mavenCentral()
-        google()
     }
 }
 
