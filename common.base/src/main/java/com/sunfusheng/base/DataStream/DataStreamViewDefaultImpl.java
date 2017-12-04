@@ -32,7 +32,7 @@ public class DataStreamViewDefaultImpl implements InfoStreamContract.View {
 
     @Override
     public void init() {
-        collectionView.setErrorViewClickListener(v -> {
+        collectionView.setFailedViewClickListener(v -> {
             presenter.load(InfoStreamContract.LoadType.TYPE_REMOTE);
             setLoadingStatus(LoadingStatus.LOADING);
         });
@@ -235,7 +235,7 @@ public class DataStreamViewDefaultImpl implements InfoStreamContract.View {
 
     @Override
     public void setErrorView(@LayoutRes int layoutResource) {
-        collectionView.setErrorView(layoutResource);
+        collectionView.setFailedView(layoutResource);
     }
 
     @Override

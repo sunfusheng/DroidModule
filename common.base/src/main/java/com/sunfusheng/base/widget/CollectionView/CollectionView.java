@@ -31,10 +31,10 @@ public class CollectionView extends FrameLayout {
 
     private ICollectionView collectionView;
     private LoadingStateDelegate loadingStateDelegate;
-    private View mErrorLayout;
-    private View mEmptyLayout;
-    private View mLoadingLayout;
-    private OnClickListener errorLayoutClickListener;
+    private View failedView;
+    private View emptyView;
+    private View loadingView;
+    private OnClickListener failedViewClickListener;
     private OnClickListener emptyViewClickListener;
 
     public SwipeRefreshWrapper mSwipeRefreshLayout;
@@ -46,7 +46,7 @@ public class CollectionView extends FrameLayout {
     private boolean isLoadingMore = false;
     private ViewObject lastViewObject;
     private Pair<Integer, Integer> visibleViewObjectPosition;
-    ViewStub errorViewStub;
+    ViewStub failedViewStub;
     ViewStub emptyViewStub;
     private CollectionView.OnLoadMoreListener onLoadMoreListener;
 
@@ -75,16 +75,16 @@ public class CollectionView extends FrameLayout {
         View view = inflater.inflate(R.layout.widget_collection_view, this);
         collectionView = CollectionViewFactory.getCollectionView(getContext(), collectionType);
 
-        mSwipeRefreshLayout = (SwipeRefreshWrapper) view.findViewById(R.id.swipe_refresh_layout);
+        mSwipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout);
         mSwipeRefreshLayout.addView(collectionView.getView(), new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         mSwipeRefreshLayout.setEnabled(false);
 
         footerView = new LoadMoreFooterView(getContext());
         footerView.setStatus(FooterStatus.IDLE);
-        mLoadingLayout = findViewById(R.id.loading_layout);
-        errorViewStub = (ViewStub) view.findViewById(R.id.error_view_stub);
-        emptyViewStub = (ViewStub) view.findViewById(R.id.empty_view_stub);
-        loadingStateDelegate = new LoadingStateDelegate(mSwipeRefreshLayout, null, mLoadingLayout, null, null, errorViewStub, null, emptyViewStub);
+        loadingView = findViewById(R.id.loading_layout);
+        failedViewStub =  view.findViewById(R.id.error_view_stub);
+        emptyViewStub =  view.findViewById(R.id.empty_view_stub);
+        loadingStateDelegate = new LoadingStateDelegate(mSwipeRefreshLayout, null, loadingView, null, null, failedViewStub, null, emptyViewStub);
 
         addOnScrollListener(new OnScrollListener() {
             @Override
@@ -205,15 +205,15 @@ public class CollectionView extends FrameLayout {
 
     public void setEmptyViewClickListener(OnClickListener listener) {
         this.emptyViewClickListener = listener;
-        if (mEmptyLayout != null) {
-            mEmptyLayout.setOnClickListener(listener);
+        if (emptyView != null) {
+            emptyView.setOnClickListener(listener);
         }
     }
 
-    public void setErrorViewClickListener(OnClickListener listener) {
-        this.errorLayoutClickListener = listener;
-        if (mErrorLayout != null) {
-            mErrorLayout.setOnClickListener(listener);
+    public void setFailedViewClickListener(OnClickListener listener) {
+        this.failedViewClickListener = listener;
+        if (failedView != null) {
+            failedView.setOnClickListener(listener);
         }
     }
 
@@ -223,9 +223,9 @@ public class CollectionView extends FrameLayout {
         }
     }
 
-    public void setErrorView(@LayoutRes int layoutResource) {
-        if (errorViewStub != null && layoutResource != -1) {
-            errorViewStub.setLayoutResource(layoutResource);
+    public void setFailedView(@LayoutRes int layoutResource) {
+        if (failedViewStub != null && layoutResource != -1) {
+            failedViewStub.setLayoutResource(layoutResource);
         }
     }
 
@@ -235,11 +235,11 @@ public class CollectionView extends FrameLayout {
                 TopToastUtil.showTopToast(this, getResources().getString(R.string.top_toast_net_error));
                 loadingStateDelegate.setViewState(LoadingStatus.SUCCEED);
             } else {
-                mErrorLayout = loadingStateDelegate.setViewState(LoadingStatus.FAILED);
-                setErrorViewClickListener(errorLayoutClickListener);
+                failedView = loadingStateDelegate.setViewState(LoadingStatus.FAILED);
+                setFailedViewClickListener(failedViewClickListener);
             }
         } else if (state == LoadingStatus.EMPTY) {
-            mEmptyLayout = loadingStateDelegate.setViewState(LoadingStatus.EMPTY);
+            emptyView = loadingStateDelegate.setViewState(LoadingStatus.EMPTY);
             setEmptyViewClickListener(emptyViewClickListener);
         } else {
             loadingStateDelegate.setViewState(state);
@@ -372,16 +372,16 @@ public class CollectionView extends FrameLayout {
     }
 
     public void setEmptyLayout(int resId) {
-        if (mEmptyLayout != null) {
-            removeView(mEmptyLayout);
+        if (emptyView != null) {
+            removeView(emptyView);
         }
 
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
-        mEmptyLayout = layoutInflater.inflate(resId, this, false);
+        emptyView = layoutInflater.inflate(resId, this, false);
 
-        addView(mEmptyLayout);
-        mEmptyLayout.setVisibility(View.GONE);
+        addView(emptyView);
+        emptyView.setVisibility(View.GONE);
 
-        loadingStateDelegate = new LoadingStateDelegate(mSwipeRefreshLayout, null, mLoadingLayout, null, null, errorViewStub, mEmptyLayout, emptyViewStub);
+        loadingStateDelegate = new LoadingStateDelegate(mSwipeRefreshLayout, null, loadingView, null, null, failedViewStub, emptyView, emptyViewStub);
     }
 }

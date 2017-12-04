@@ -10,22 +10,22 @@ public class LoadingStateDelegate {
     private View viewHolder[] = new View[4];
     private ViewStub viewStubHolder[] = new ViewStub[4];
 
-    public LoadingStateDelegate(View normalView, View loadingView, View errorView, View emptyView) {
-        this(normalView, null, loadingView, null, errorView, null, emptyView, null);
+    public LoadingStateDelegate(View normalView, View loadingView, View failedView, View emptyView) {
+        this(normalView, null, loadingView, null, failedView, null, emptyView, null);
     }
 
     public LoadingStateDelegate(View normalView, ViewStub normalViewStub,
                                 View loadingView, ViewStub loadingViewStub,
-                                View errorView, ViewStub errorViewStub,
+                                View failedView, ViewStub failedViewStub,
                                 View emptyView, ViewStub emptyViewStub) {
         viewHolder[0] = loadingView;
         viewHolder[1] = normalView;
-        viewHolder[2] = errorView;
+        viewHolder[2] = failedView;
         viewHolder[3] = emptyView;
 
         viewStubHolder[0] = loadingViewStub;
         viewStubHolder[1] = normalViewStub;
-        viewStubHolder[2] = errorViewStub;
+        viewStubHolder[2] = failedViewStub;
         viewStubHolder[3] = emptyViewStub;
     }
 
