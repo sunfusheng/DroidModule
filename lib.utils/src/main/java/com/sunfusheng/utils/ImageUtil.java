@@ -8,7 +8,6 @@ import android.widget.ImageView;
 
 public class ImageUtil {
 
-    @SuppressWarnings("deprecation")
     public static void colorImageViewDrawable(ImageView imageView, @ColorRes int id) {
         if (imageView == null) {
             return;
