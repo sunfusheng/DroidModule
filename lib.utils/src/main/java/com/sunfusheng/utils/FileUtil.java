@@ -323,13 +323,7 @@ public class FileUtil {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (in != null) {
-                    in.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            IoUtil.close(in);
         }
 
 
