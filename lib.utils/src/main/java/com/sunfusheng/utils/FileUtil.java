@@ -354,12 +354,10 @@ public class FileUtil {
     }
 
     private static void copyFile(Context context, String filename) {
-        AssetManager assetManager = context.getAssets();
-
         InputStream in = null;
         OutputStream out = null;
         try {
-            in = assetManager.open(filename);
+            in = context.getAssets().open(filename);
             String filePath = context.getFilesDir().getAbsolutePath();
             String[] split = filename.split("/");
             for (int i = 0; i < split.length - 1; i++) {
@@ -381,18 +379,8 @@ public class FileUtil {
         } catch (Throwable e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (in != null) {
-                    in.close();
-                }
-                if (out != null) {
-                    out.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+            IoUtil.close(in);
+            IoUtil.close(out);
         }
-
     }
 }
