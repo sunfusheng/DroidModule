@@ -220,6 +220,7 @@ public class NetworkUtil {
         }
     }
 
+    @SuppressLint("MissingPermission")
     public static boolean isMobileAvailable() {
         try {
             ConnectivityManager manager = (ConnectivityManager) ApplicationContextHolder.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -237,6 +238,7 @@ public class NetworkUtil {
         return networkInfo;
     }
 
+    @SuppressLint("MissingPermission")
     public static int getCellid() {
         try {
             return ((GsmCellLocation) getTelephonyManager().getCellLocation()).getCid();
